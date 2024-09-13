@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
+//  Imoort Component
+import Books from "./components/Books";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -13,7 +16,10 @@ function App() {
   return (
     <>
       <h1>Book Buddy</h1>
-      <Routes></Routes>
+      <Routes>
+        <Route exact path="/" element={<Books />} />
+        <Route path="/books" element={<Books />} />
+      </Routes>
     </>
   );
 }
